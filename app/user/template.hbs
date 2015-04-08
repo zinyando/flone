@@ -1,0 +1,14 @@
+{{outlet}}<h3>User Route</h3>
+
+{{#if session.currentUser}}
+  Welcome {{session.currentUser.name}}
+{{else}}
+  {{#if session.isAuthenticated}}
+    One sec while we get you signed in...
+  {{else}}
+    {{error}}
+    <button {{action 'facebookLogin'}}>
+      Login with Facebook
+    </button>
+  {{/if}}
+{{/if}}
